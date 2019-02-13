@@ -18,23 +18,5 @@
 			write(1,*) x(i), ' ', y(i)
 		end do 
 	end if
-		end subroutine plot2d
-
-		subroutine plot3d(x,y,z)
-			real, intent(in), dimension(:) :: x, y, z
-			integer :: sizeX, sizeY, sizeZ, i
-			sizeX = size(x)
-			sizeY = size(y)
-			sizeZ = size(z)
-
-				if(sizeX /= sizeY .or. sizeX /= sizeZ) then
-					print *, "Array size mismatched!"
-				else 
-				open(unit=2, file='plot3d.dat')
-				do i = 1,size(x)
-					write(1,*) x(i), ' ', y(i), ' ', z(i)
-				end do
-			end if
-		end subroutine plot3d
-
-	end module gnuplot_fortran
+	end subroutine plot2d
+end module gnuplot_fortran
